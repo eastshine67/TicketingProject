@@ -4,7 +4,7 @@ class list:
 
 Main(class): Processing(class)을 실행시킴
 
-Processing(class): 티켓팅 프로그램을 작동 및 종료
+ProcessingMachine(class): 티켓팅 프로그램을 작동 및 종료
 
 Variables(class): Processing(class)이 1회 실행될 때, 조건에 따라 변하는 변수값 모음
 
