@@ -11,3 +11,5 @@ Variables(class): Processing(class)이 1회 실행될 때, 조건에 따라 변�
 UserInput(class): 사용자가 입력하는 내용들을 처리
 
 ConstantValues(class): 조건과 상관없이 항상 고정된 상수값 모음
+
+Database(class): 티켓팅 프로그램을 작동파트와 연동되어 구매내역을 저장
