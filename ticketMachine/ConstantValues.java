@@ -24,14 +24,7 @@ public class ConstantValues {
 	final static int CHILD_NIGHT_PRICE = 37000;
 	final static int ELDERLY_DAY_PRICE = 44000;
 	final static int ELDERLY_NIGHT_PRICE = 37000;
-	final static int MIN_BABY = 1;
-	final static int MAX_BABY = 2;
-	final static int MIN_CHILD = 3;
-	final static int MAX_CHILD = 12;
-	final static int MIN_TEEN = 13;
-	final static int MAX_TEEN = 18;	
-	final static int MIN_ADULT = 19;
-	final static int MAX_ADULT = 64;
 	final static int MIN_QUANTITY = 1;
 	final static int MAX_QUANTITY = 10;
+	final static int [] AGE_RANGE = {2, 3, 12, 13, 18, 19, 64};
 }

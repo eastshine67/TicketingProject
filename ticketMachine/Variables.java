@@ -17,10 +17,13 @@ public class Variables {
 	int price; // price without concession
 	int finalPrice; // price with concession
 	int finalTotalPrice; // volume price with concession
+	String finalTotalPricePrint; // price in the purchase list
 	ArrayList<String> purchaseList = new ArrayList<String>(); // purchase list
 	String typePrint; // type in the purchase list
 	String agePrint; // age categorized in the purchase list
 	String concessionPrint; // concession type in the purchase list
+	String quantityPrint; // quantity in the purchase list
 	int sum; // total price
-	
+	String str; //
+	String [] strA;
 }
