@@ -36,15 +36,15 @@ public class ProcessingMachine {
 				v.finalPrice = (int)Math.round(v.concessionRate * (double)v.price);
 				v.finalTotalPrice = v.finalPrice * v.quantity;
 				v.purchaseList.add(v.typePrint); // 주문한 티켓 저장
-				v.purchaseList.add(v.agePrint);
-				v.purchaseList.add("X");
+				v.purchaseList.add(v.agePrint); // 연령 구분 저장
+				v.purchaseList.add("X"); // X표지 저장
 				v.quantityPrint = Integer.toString(v.quantity);
-				v.purchaseList.add(v.quantityPrint);
+				v.purchaseList.add(v.quantityPrint); // 수량 저장
 				v.finalTotalPricePrint = Integer.toString(v.finalTotalPrice);
-				v.purchaseList.add(v.finalTotalPricePrint);
+				v.purchaseList.add(v.finalTotalPricePrint); // 가격 저장
 				v.sum += v.finalTotalPrice;
-				v.purchaseList.add(v.concessionPrint);
-				p.printPrice(v.sum);
+				v.purchaseList.add(v.concessionPrint); // 우대사항 저장
+				p.printPrice(v.sum); // 입장료 총액은 *****원 입니다
 				fw.dataWrite(v.typePrint, v.agePrint, v.quantityPrint, v.finalTotalPricePrint,  v.concessionPrint); // 구매내역 csv 파일로 저장
 				v.conti = uinput.inputContinue(); // 계속 발권하시겠습니까?
 				if(v.conti == 2) {
@@ -56,6 +56,7 @@ public class ProcessingMachine {
 				}
 				
 			} catch (Exception e) {
+				System.out.println("error");
 			}
 			
 		} while (v.programExit != ConstantValues.PROGRAM_EXIT);

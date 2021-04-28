@@ -11,7 +11,7 @@ public class FileWriting{
 	private boolean isFileExist;
 	Variables v = new Variables();
 	
-	public FileWriting() {
+	public void FileChecking() {
 		try {
 			File file = new File("C:\\Users\\ÀÌµ¿¿±\\Desktop\\ticketing.csv");
 			if(file.exists() == false) {
@@ -41,10 +41,12 @@ public class FileWriting{
 	}
 
 	public void dataWrite(String typePrint, String agePrint, String quantityPrint, String finalTotalPricePrint, String concessionPrint) throws IOException {
+		FileChecking();
 		headerWrite();		
 		Calendar c = Calendar.getInstance();
 		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
 		String result = sdf.format(c.getTime()) + "," + typePrint  + "," + agePrint + "," + quantityPrint + "," + finalTotalPricePrint + "," + concessionPrint + "\n";
 		fw.write(result);
+		fileClose();
 	}
 }
