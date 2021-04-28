@@ -13,10 +13,6 @@ public class Print {
 		System.out.println("주민번호를 입력하세요.");	
 	}
 	
-	public void printErrorRegiNumber() {
-		System.out.println("잘못된 주민번호 입니다.");
-	}
-	
 	public void printQuantity() {
 		System.out.println("몇개를 주문하시겠습니까? (최대 10개)");
 	}
@@ -62,11 +58,19 @@ public class Print {
 			if(i % 6 == 0 && i != 0) System.out.println();
 			
 			if(i % 1 == 0 && strA[i].length() == 3) { // '청소년'은 3자이므로 줄 맞추기
-				System.out.printf("%-7.7s", strA[i]); // strA[i] 권종, 나이, X, 갯수, 금액, 우대
+				System.out.printf("%-7s", strA[i]); // strA[i] 권종, 나이, X, 갯수, 금액, 우대
 			} else {
-				System.out.printf("%-8.8s", strA[i]); // strA[i] 권종, 나이, X, 갯수, 금액, 우대
+				System.out.printf("%-8s", strA[i]); // strA[i] 권종, 나이, X, 갯수, 금액, 우대
 			}
 		}
 		System.out.printf("\n\n");
+	}
+	
+	public void printError() {
+		System.out.println("잘못된 입력입니다");
+	}
+	
+	public void printErrorOccured() {
+		System.out.println("에러 발생");
 	}
 }

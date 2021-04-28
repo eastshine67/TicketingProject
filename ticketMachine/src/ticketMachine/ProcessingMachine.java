@@ -56,8 +56,9 @@ public class ProcessingMachine {
 				}
 				
 			} catch (Exception e) {
-				System.out.println("error");
+				p.printErrorOccured();
 			}
+			
 			
 		} while (v.programExit != ConstantValues.PROGRAM_EXIT);
 		scanner.close();
@@ -120,7 +121,6 @@ public class ProcessingMachine {
 	
 	public String regiNumChecker(String regiNum) {
 		if (v.regiNum.length() != 13) {
-			p.printErrorRegiNumber();
 			return "error";
 		
 		} else {
