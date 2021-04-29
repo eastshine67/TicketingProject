@@ -18,27 +18,20 @@ public class Main {
 		String readtxt;
 		FileWriting fw = new FileWriting();
 		
-		if((readtxt = br.readLine()) == null) {
-		
+		if ((readtxt = br.readLine()) == null) {
 			System.out.printf("빈 파일입니다\n");
 			
 			return;
 		}
-		String[] field_name = readtxt.split(",");
 		
+		String[] field_name = readtxt.split(",");
 		System.out.printf("================================ report.csv =================================\n\n");
 		System.out.printf("%s%9s%11s%7s%8s%12s", "날짜", "권종", "연령구분", "수량", "가격", "우대사항" + "\n\n");
 		ArrayList<String[]> test = new ArrayList<String[]>();
 		
 		while ((readtxt = br.readLine()) != null) {
-		
 			String [] field = readtxt.split(",");
-			
-			
-			
-			
 			test.add(field); // arrayList
-			
 			
 			for (int i = 0; i < field_name.length; i++) {
 				
@@ -47,7 +40,6 @@ public class Main {
 					System.out.printf("\n%s%3s", field[i], "");
 					
 				} else {
-					
 					if (i % 1 == 0 && field[i].length() == 3) { // '청소년'은 3자이므로 줄 맞추기
 						System.out.printf("%-9s", field[i]); // strA[i] 권종, 나이, X, 갯수, 금액, 우대
 					} else {
@@ -107,7 +99,6 @@ public class Main {
 					v.nightPriceSum = v.nightPriceSum + v.nightPrice;
 				}
 				
-				
 				if (field[i].equals("*우대적용 없음")) {
 					v.noConcessionCount = Integer.parseInt(field[i-1]);
 					if (v.noConcessionCount == 0) v.noConcessionCount++;
@@ -129,7 +120,6 @@ public class Main {
 				}
 			}
 		}
-		
 		
 		String[] testField;
 		String[] testField2;
@@ -172,15 +162,12 @@ public class Main {
 		fw.dataWrite1("어른", v.dayAdultCount, v.nightAdultCount);
 		fw.dataWrite1("노인", v.dayElderlyCount, v.nightElderlyCount);
 		fw.dataWrite1("합계", (v.dayToddlerCount + v.dayChildCount + v.dayTeenCount + v.dayAdultCount + v.dayElderlyCount), (v.nightToddlerCount + v.nightChildCount + v.nightTeenCount + v.nightAdultCount + v.nightElderlyCount));
-
 		
 		System.out.printf("============================= 일자별 매출 현황 ==============================\n\n");
 		String[] dateNprice;
 		
 		for(int i = 0; i < incomePerDay.size(); i++ ) {
-
-			dateNprice = incomePerDay.get(i).split(",");
-			
+			dateNprice = incomePerDay.get(i).split(",");			
 			System.out.printf("%s년 %s월 %s일 : 총 매출 %10s원\n", dateNprice[0].substring(0,4), dateNprice[0].substring(4,6), dateNprice[0].substring(6), dateNprice[1]);
 			
 			fw.dataWrite2(dateNprice[0], dateNprice[1]);
@@ -194,10 +181,8 @@ public class Main {
 		System.out.printf("국가유공자 : %s\t\n", v.nationalMeritCount);
 		System.out.printf("다자녀 : %s\t\n", v.multichildCount);
 		System.out.printf("임산부 : %s\t\n", v.pregnantCount);
-		
 	
 		br.close();
-		
-	
+
 	}
 }
