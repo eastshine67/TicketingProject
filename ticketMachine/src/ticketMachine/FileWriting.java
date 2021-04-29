@@ -14,13 +14,13 @@ public class FileWriting{
 	
 	public void FileChecking() {
 		try {
-			File file = new File("C:\\Users\\ÀÌµ¿¿±\\Desktop\\ticketing.csv");
+			File file = new File("ticketing.csv");
 			if(file.exists() == false) {
 				isFileExist = false;
 			} else {
 				isFileExist = true;
 			}
-			fw = new FileWriter("C:\\Users\\ÀÌµ¿¿±\\Desktop\\ticketing.csv", true);					
+			fw = new FileWriter("ticketing.csv", true);					
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

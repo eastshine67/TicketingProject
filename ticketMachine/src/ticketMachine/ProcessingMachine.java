@@ -98,7 +98,7 @@ public class ProcessingMachine {
 		
 		for (int i = 0; i < ConstantValues.AGE_RANGE.length; i++) {
 
-			if (age <= ConstantValues.AGE_RANGE[0]) v.price = ConstantValues.BABY_PRICE;
+			if (age <= ConstantValues.AGE_RANGE[0]) v.agePrint = "유아";
 			if (age >= ConstantValues.AGE_RANGE[1] && age <= ConstantValues.AGE_RANGE[2]) v.agePrint = "소인";
 			if (age >= ConstantValues.AGE_RANGE[3] && age <= ConstantValues.AGE_RANGE[4]) v.agePrint = "청소년";
 			if (age >= ConstantValues.AGE_RANGE[5] && age <= ConstantValues.AGE_RANGE[6]) v.agePrint = "대인";
@@ -109,6 +109,7 @@ public class ProcessingMachine {
 	
 	public void agePrice() {
 		
+		if (v.agePrint == "유아") v.price = ConstantValues.BABY_PRICE;
 		if (v.agePrint == "소인" && v.type == 1) v.price = ConstantValues.CHILD_DAY_PRICE;
 		if (v.agePrint == "소인" && v.type == 2) v.price = ConstantValues.CHILD_NIGHT_PRICE;
 		if (v.agePrint == "청소년" && v.type == 1) v.price = ConstantValues.TEEN_DAY_PRICE;
