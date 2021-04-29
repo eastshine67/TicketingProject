@@ -35,7 +35,7 @@ public class FileWriting{
 	
 	public void headerWrite() throws IOException {
 		if (isFileExist == false) {
-			String head = "날짜," + "권종," + "연령구분," + "수량," + "가격," + "우대사항" + "\n";
+			String head = "일자," + "총 매출" + "\n";
 			fw.write(head);
 		}		
 	}
@@ -48,6 +48,5 @@ public class FileWriting{
 			String result = sdf.format(date) + "," + sales + "\n";
 			fw.write(result);
 			fileClose();
-			
 	}
 }
