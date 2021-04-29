@@ -16,6 +16,7 @@ public class Main {
 		BufferedReader br = new BufferedReader(new FileReader(f));
 		Variables v = new Variables();
 		String readtxt;
+		FileWriting fw = new FileWriting();
 		
 		if((readtxt = br.readLine()) == null) {
 		
@@ -107,27 +108,25 @@ public class Main {
 				}
 				
 				
-					if (field[i].equals("*우대적용 없음")) {
-						v.noConcessionCount = Integer.parseInt(field[i-1]);
-						if (v.noConcessionCount == 0) v.noConcessionCount++;
+				if (field[i].equals("*우대적용 없음")) {
+					v.noConcessionCount = Integer.parseInt(field[i-1]);
+					if (v.noConcessionCount == 0) v.noConcessionCount++;
 						
-					} else if (field[i].equals("*장애인 우대적용")) {
-						v.disabledCount = Integer.parseInt(field[i-1]);
-						if (v.disabledCount == 0) v.disabledCount++;
+				} else if (field[i].equals("*장애인 우대적용")) {
+					v.disabledCount = Integer.parseInt(field[i-1]);
+					if (v.disabledCount == 0) v.disabledCount++;
 					
-					} else if (field[i].equals("*국가유공자 우대적용")) {
-						v.nationalMeritCount = Integer.parseInt(field[i-1]);
-						if (v.nationalMeritCount == 0) v.nationalMeritCount++;
-						
-					} else if (field[i].equals("*다자녀 우대적용")) {
-						v.multichildCount = Integer.parseInt(field[i-1]);
-						if (v.multichildCount == 0) v.multichildCount++;
-					} else if (field[i].equals("*임산부 우대적용")) {
-						v.disabledCount = Integer.parseInt(field[i-1]);
-						if (v.disabledCount == 0) v.disabledCount++;
-					}
+				} else if (field[i].equals("*국가유공자 우대적용")) {
+					v.nationalMeritCount = Integer.parseInt(field[i-1]);
+					if (v.nationalMeritCount == 0) v.nationalMeritCount++;
 					
-				
+				} else if (field[i].equals("*다자녀 우대적용")) {
+					v.multichildCount = Integer.parseInt(field[i-1]);
+					if (v.multichildCount == 0) v.multichildCount++;
+				} else if (field[i].equals("*임산부 우대적용")) {
+					v.disabledCount = Integer.parseInt(field[i-1]);
+					if (v.disabledCount == 0) v.disabledCount++;
+				}
 			}
 		}
 		
@@ -174,6 +173,8 @@ public class Main {
 			dateNprice = incomePerDay.get(i).split(",");
 			
 			System.out.printf("%s년 %s월 %s일 : 총 매출 %10s원\n", dateNprice[0].substring(0,4), dateNprice[0].substring(4,6), dateNprice[0].substring(6), dateNprice[1]);
+			
+			fw.dataWrite(dateNprice[0], dateNprice[1]);
 		}
 		
 		System.out.printf("-----------------------------------------------------------------------------\n\n");
