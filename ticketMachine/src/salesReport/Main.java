@@ -104,7 +104,32 @@ public class Main {
 					v.tmp2 = field[i+3];
 					v.nightPrice = Integer.parseInt(v.tmp2);
 					v.nightPriceSum = v.nightPriceSum + v.nightPrice;
-				}	
+				}
+				
+				
+					if (field[i].equals("*우대적용 없음")) {
+						v.noConcessionCount = Integer.parseInt(field[i-1]);
+						if (v.noConcessionCount == 0) v.noConcessionCount++;
+						
+					} else if (field[i].equals("장애인")) {
+						v.disabledCount = Integer.parseInt(field[i-1]);
+						if (v.disabledCount == 0) v.disabledCount++;
+					
+					} else if (field[i].equals("국가유공자")) {
+						v.nationalMeritCount = Integer.parseInt(field[i-1]);
+						if (v.nationalMeritCount == 0) v.nationalMeritCount++;
+						
+					} else if (field[i].equals("다자녀")) {
+						v.multichildCount = Integer.parseInt(field[i-1]);
+						if (v.multichildCount == 0) v.multichildCount++;
+					} else if (field[i].equals("임산부")) {
+						v.disabledCount = Integer.parseInt(field[i-1]);
+						if (v.disabledCount == 0) v.disabledCount++;
+					} else {
+						
+					}
+					
+				
 			}
 		}
 		
@@ -155,13 +180,14 @@ public class Main {
 		
 		System.out.printf("-----------------------------------------------------------------------------\n\n");
 		System.out.printf("============================= 우대권 판매 현황 ==============================\n\n");
-//		System.out.printf("총 판매 티켓 수 : %10s");
-//		System.out.printf("우대 없음 : %10s");
-//		System.out.printf("장애인 : %10s");
-//		System.out.printf("국가유공자 : %10s");
-//		System.out.printf("다자녀 : %10s");
-//		System.out.printf("임산부 : %10s");
-//		
+		System.out.printf("총 판매 티켓 수 : %s\t\n", v.dayCount+v.nightCount);
+		System.out.printf("우대 없음 : %s\t\n", v.noConcessionCount);
+		System.out.printf("장애인 : %s\t\n", v.disabledCount);
+		System.out.printf("국가유공자 : %s\t\n", v.nationalMeritCount);
+		System.out.printf("다자녀 : %s\t\n", v.multichildCount);
+		System.out.printf("임산부 : %s\t\n", v.pregnantCount);
+		
+	
 		br.close();
 		
 	
