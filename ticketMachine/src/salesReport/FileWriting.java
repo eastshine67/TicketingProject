@@ -33,17 +33,34 @@ public class FileWriting{
 		}
 	}
 	
-	public void headerWrite() throws IOException {
+	public void headerWrite1() throws IOException {
+		if (isFileExist == false) {
+			String head = "구분," + "주간권," + "야간권," + "\n";
+			fw.write(head);
+		}		
+	}
+	
+	public void headerWrite2() throws IOException {
 		if (isFileExist == false) {
 			String head = "일자," + "총 매출" + "\n";
 			fw.write(head);
 		}		
 	}
 
-	public void dataWrite(String date, String sales) throws IOException {
+	public void dataWrite1(String agetype, int day, int night) throws IOException {
+		
+		FileChecking();
+		headerWrite1();		
+		String result = agetype + "," + day + "," + night + "\n";
+		fw.write(result);
+		fileClose();
+}
+	
+	
+	public void dataWrite2(String date, String sales) throws IOException {
 		
 			FileChecking();
-			headerWrite();		
+			headerWrite2();		
 			SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
 			String result = sdf.format(date) + "," + sales + "\n";
 			fw.write(result);

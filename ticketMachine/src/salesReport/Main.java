@@ -160,11 +160,20 @@ public class Main {
 		System.out.printf("\n-----------------------------------------------------------------------------\n");
 		System.out.printf("============================= 권종 별 판매현황 ==============================\n\n");
 		System.out.printf("\n주간권 총 %d매", v.dayCount);
-		System.out.printf("\n소인 %d매, 청소년 %d매, 대인 %d매, 경로 %d매", v.dayChildCount, v.dayTeenCount, v.dayAdultCount, v.dayElderlyCount);
+		System.out.printf("\n유아 %d매, 소인 %d매, 청소년 %d매, 대인 %d매, 경로 %d매", v.dayToddlerCount, v.dayChildCount, v.dayTeenCount, v.dayAdultCount, v.dayElderlyCount);
 		System.out.printf("\n주간권 매출 : %d원\n", v.dayPriceSum);
 		System.out.printf("\n야간권 총 %d매", v.nightCount);
-		System.out.printf("\n소인 %d매, 청소년 %d매, 대인 %d매, 경로 %d매", v.nightChildCount, v.nightTeenCount, v.nightAdultCount, v.nightElderlyCount);
+		System.out.printf("\nn유아 %d매, 소인 %d매, 청소년 %d매, 대인 %d매, 경로 %d매", v.nightToddlerCount, v.nightChildCount, v.nightTeenCount, v.nightAdultCount, v.nightElderlyCount);
 		System.out.printf("\n야간권 매출 : %d원\n", v.nightPriceSum);
+		
+		fw.dataWrite1("유아", v.dayToddlerCount, v.nightToddlerCount);
+		fw.dataWrite1("어린이", v.dayChildCount, v.nightChildCount);
+		fw.dataWrite1("청소년", v.dayTeenCount, v.nightTeenCount);
+		fw.dataWrite1("어른", v.dayAdultCount, v.nightAdultCount);
+		fw.dataWrite1("노인", v.dayElderlyCount, v.nightElderlyCount);
+		fw.dataWrite1("합계", (v.dayToddlerCount + v.dayChildCount + v.dayTeenCount + v.dayAdultCount + v.dayElderlyCount), (v.nightToddlerCount + v.nightChildCount + v.nightTeenCount + v.nightAdultCount + v.nightElderlyCount));
+
+		
 		System.out.printf("============================= 일자별 매출 현황 ==============================\n\n");
 		String[] dateNprice;
 		
@@ -174,7 +183,7 @@ public class Main {
 			
 			System.out.printf("%s년 %s월 %s일 : 총 매출 %10s원\n", dateNprice[0].substring(0,4), dateNprice[0].substring(4,6), dateNprice[0].substring(6), dateNprice[1]);
 			
-			fw.dataWrite(dateNprice[0], dateNprice[1]);
+			fw.dataWrite2(dateNprice[0], dateNprice[1]);
 		}
 		
 		System.out.printf("-----------------------------------------------------------------------------\n\n");
