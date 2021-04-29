@@ -111,22 +111,20 @@ public class Main {
 						v.noConcessionCount = Integer.parseInt(field[i-1]);
 						if (v.noConcessionCount == 0) v.noConcessionCount++;
 						
-					} else if (field[i].equals("장애인")) {
+					} else if (field[i].equals("*장애인 우대적용")) {
 						v.disabledCount = Integer.parseInt(field[i-1]);
 						if (v.disabledCount == 0) v.disabledCount++;
 					
-					} else if (field[i].equals("국가유공자")) {
+					} else if (field[i].equals("*국가유공자 우대적용")) {
 						v.nationalMeritCount = Integer.parseInt(field[i-1]);
 						if (v.nationalMeritCount == 0) v.nationalMeritCount++;
 						
-					} else if (field[i].equals("다자녀")) {
+					} else if (field[i].equals("*다자녀 우대적용")) {
 						v.multichildCount = Integer.parseInt(field[i-1]);
 						if (v.multichildCount == 0) v.multichildCount++;
-					} else if (field[i].equals("임산부")) {
+					} else if (field[i].equals("*임산부 우대적용")) {
 						v.disabledCount = Integer.parseInt(field[i-1]);
 						if (v.disabledCount == 0) v.disabledCount++;
-					} else {
-						
 					}
 					
 				
